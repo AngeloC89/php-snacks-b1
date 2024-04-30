@@ -136,6 +136,42 @@ function printP($singleParagraph){
     }
 }
 
+//snack 6 \********************************************************
+$db = [
+    'teachers' => [
+        [
+            'name' => 'Michele',
+            'lastname' => 'Papagni'
+        ],
+        [
+            'name' => 'Fabio',
+            'lastname' => 'Forghieri'
+        ]
+    ],
+    'pm' => [
+        [
+            'name' => 'Roberto',
+            'lastname' => 'Marazzini'
+        ],
+        [
+            'name' => 'Federico',
+            'lastname' => 'Pellegrini'
+        ]
+    ]
+];
+
+function printDb ($db, $ky){
+        foreach($db as $key => $post) {
+            if($key === $ky) {
+            echo'<h4>' . $key . '</h4>' . "<br>";
+            foreach($post as $posts) {
+                echo $posts["name"] ;
+                echo $posts["lastname"] . "<br><br>"; ;
+               
+            };
+        };
+    };
+};
 ?>
  
 
@@ -177,6 +213,11 @@ function printP($singleParagraph){
 
         <h3 class="text-uppercase">Snack 5</h3>
         <div> <?php printP($singleParagraph) ?></div>
+
+        <h3 class="text-uppercase">Snack 6</h3>
+        <div style="border: 2px solid grey "> <?php printDb($db, 'teachers') ?></div>
+        <br>
+        <div style="border: 2px solid green "> <?php printDb($db, 'pm') ?></div>
         
        
         <br>
