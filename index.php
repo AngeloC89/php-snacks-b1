@@ -39,14 +39,81 @@ $matches = [
     ]
   ];
 
+//function of first snack for print the result...
   function getMatches($matches) {
     foreach($matches as $match) {
         echo $match["squadraCasa"] . " - " . $match["squadraOspite"] . " | " . $match["puntiCasa"] . " - " . $match["puntiOspite"] . "<br>";
       }
   }
 
+//snack 3 \********************************************************
  
+$posts = [
+
+    '10/01/2024' => [
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'ciao'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'come stai?'
+        ],
+    ],
+    '10/02/2024' => [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'ci 6?'
+        ]
+    ],
+    '15/05/2024' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'buondì'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'tutto ok?'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'ok...'
+        ]
+    ],
+];
+
+//var_dump($posts);
+
+
+function getPosts($posts) {
+    foreach($posts as $date => $post) {
+        echo $date . "<br>";
+        foreach($post as $posts) {
+            echo $posts["title"] . " : ". "<br>";
+            echo $posts["author"] . " - " ;
+            echo $posts["text"] . "<br><br>";
+        }
+    }
+};
+
+
+
+
+//snack 4 \********************************************************
+$arrayNum = [];
+
+var_dump($arrayNum);
+
+
 ?>
+ 
+
 
 
 
@@ -71,9 +138,20 @@ $matches = [
     <h1 class="text-uppercase text-center ">php snacks</h1>
 
     <div class="container text-center my-4 ">
-        <?php  getMatches($matches) ?>
+        <h3 class="text-uppercase">Snack 2</h3>Snack 1</h3>
+        <div> <?php getMatches($matches) ?> </div>
         <br>
-        
+
+        <h3 class="text-uppercase">Snack 3</h3>
+        <div> <?php getPosts($posts)  ?></div>
+        <br>
+
+        <h3 class="text-uppercase">Snack 4</h3>
+        <div> </div>
+       
+       
+        <br>
+
     </div>
 
 
