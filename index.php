@@ -89,8 +89,6 @@ $posts = [
 ];
 
 //var_dump($posts);
-
-
 function getPosts($posts) {
     foreach($posts as $date => $post) {
         echo $date . "<br>";
@@ -130,6 +128,14 @@ function printArray(){
  
 
 //snack 5 \********************************************************
+$paragraph = '1 lorem ipsum dolor sit amet consectetur adipisicing elit. 2 lorem ipsum dolor sit amet consectetur adipisicing elit. 3 lorem ipsum dolor sit amet consectetur adipisicing elit. 4 lorem ipsum dolor sit amet consectetur adipisicing elit. 5 lorem ipsum dolor sit amet consectetur adipisicing elit.';
+$singleParagraph = explode('.', $paragraph);
+function printP($singleParagraph){
+    foreach($singleParagraph as $p) {
+        echo $p .'<br>';
+    }
+}
+
 ?>
  
 
@@ -157,7 +163,7 @@ function printArray(){
     <h1 class="text-uppercase text-center ">php snacks</h1>
 
     <div class="container text-center my-4 ">
-        <h3 class="text-uppercase">Snack 2</h3>Snack 1</h3>
+        <h3 class="text-uppercase">Snack 1</h3>
         <div> <?php getMatches($matches) ?> </div>
         <br>
 
@@ -167,7 +173,11 @@ function printArray(){
 
         <h3 class="text-uppercase">Snack 4</h3>
         <div> <?php printArray()  ?> </div>
-       
+        <br>
+
+        <h3 class="text-uppercase">Snack 5</h3>
+        <div> <?php printP($singleParagraph) ?></div>
+        
        
         <br>
 
