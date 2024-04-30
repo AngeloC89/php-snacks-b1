@@ -106,11 +106,30 @@ function getPosts($posts) {
 
 
 //snack 4 \********************************************************
-$arrayNum = [];
+function getRand($min, $max, $range) {
 
-var_dump($arrayNum);
+    $arrayN = [];
 
+    while(count($arrayN) < $range) {
+        $num = rand($min, $max);
+        if(!in_array($num, $arrayN)) {
+            $arrayN[] = $num;
+        }
+    }
+    return $arrayN;
+    
+}
+    
+function printArray(){
+    $arrayNumber = getRand(1, 100, 15);
+    foreach($arrayNumber as $num) {
+        echo $num ."<br>";
+    }
 
+}
+ 
+
+//snack 5 \********************************************************
 ?>
  
 
@@ -147,7 +166,7 @@ var_dump($arrayNum);
         <br>
 
         <h3 class="text-uppercase">Snack 4</h3>
-        <div> </div>
+        <div> <?php printArray()  ?> </div>
        
        
         <br>
