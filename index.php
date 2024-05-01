@@ -45,7 +45,7 @@ function getMatches($matches)
     foreach ($matches as $match) {
         echo $match["squadraCasa"] . " - " . $match["squadraOspite"] . " | " . $match["puntiCasa"] . " - " . $match["puntiOspite"] . "<br>";
     }
-}
+};
 
 //snack 2 \********************************************************
 function getAccess()
@@ -57,7 +57,7 @@ function getAccess()
             echo '<section style="border:2px solid red; height: 50px; background-color:red; text-align:center">' . "Accesso negato" . '</section>';
         }
     }
-}
+};
 
 
 //snack 3 \********************************************************
@@ -113,8 +113,7 @@ function getPosts($posts)
             echo $posts["text"] . "<br><br>";
         }
     }
-}
-;
+};
 
 
 
@@ -133,7 +132,7 @@ function getRand($min, $max, $range)
     }
     return $arrayN;
 
-}
+};
 
 function printArray()
 {
@@ -142,7 +141,7 @@ function printArray()
         echo $num . "<br>";
     }
 
-}
+};
 
 
 //snack 5 \********************************************************
@@ -153,7 +152,7 @@ function printP($singleParagraph)
     foreach ($singleParagraph as $p) {
         echo $p . '<br>';
     }
-}
+};
 
 //snack 6 \********************************************************
 $db = [
@@ -195,9 +194,47 @@ function printDb($db, $ky)
         ;
     }
     ;
-}
-;
-?>
+};
+
+//snack 7 \********************************************************
+
+$class_101 = [
+    [
+        "name" => "Angelo",
+        "surname" => "Rossi",
+        "grades" => [8, 7, 9, 6, 10],
+    ],
+    [
+        "name" => "Maria",
+        "surname" => "Cozza",
+        "grades" => [9, 8, 8, 7, 9],
+    ],
+    [
+        "name" => "Giovanni",
+        "surname" => "Zilioto",
+        "grades" => [9, 6, 2, 4, 7],
+    ],
+    [
+        "name" => "Peppino",
+        "surname" => "Caruso",
+        "grades" => [7, 4, 5, 8, 2],
+    ],
+    [
+        "name" => "Lucio",
+        "surname" => "Gambino",
+        "grades" => [4, 7, 2, 3, 1],
+    ],
+];
+
+function getCard($class_101) {
+    foreach ($class_101 as $student) {
+        $vote = array_sum($student['grades']) / count($student['grades']);
+        echo "<ul><li class='student'> " .$student['name'] . " " . $student['surname'] . ". <br>". "Voto: " . $vote . "</li></ul>" . "<br>";
+    }
+};
+
+
+    ?>
 
 <!-- ******************************************** HTML *********************************************** -->
 
@@ -213,8 +250,6 @@ function printDb($db, $ky)
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link grity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
-   
     <title>PHP-Snacks</title>
 
 </head>
@@ -261,22 +296,32 @@ function printDb($db, $ky)
         <h3 class="text-uppercase">Snack 3</h3>
         <div> <?php getPosts($posts) ?></div>
         <br>
+
+
         <!-- snack 4 \******************************************************** -->
         <h3 class="text-uppercase">Snack 4</h3>
         <div> <?php printArray() ?> </div>
         <br>
+
+
         <!-- snack 5 \******************************************************** -->
         <h3 class="text-uppercase">Snack 5</h3>
         <div> <?php printP($singleParagraph) ?></div>
         <br>
+
+
         <!-- snack 6 \******************************************************** -->
         <h3 class="text-uppercase">Snack 6</h3>
         <div class="snack-six-grey"> <?php printDb($db, 'teachers') ?></div>
         <br>
         <div class="snack-six-green"> <?php printDb($db, 'pm') ?></div>
         <br>
-        <!-- snack 7 \******************************************************** -->
 
+
+        <!-- snack 7 \******************************************************** -->
+        <h3 class="text-uppercase">Snack 7</h3>
+        <br>
+        <div> <?php getCard($class_101) ?></div>
     </div>
 
 
