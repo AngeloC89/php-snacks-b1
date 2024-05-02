@@ -33,7 +33,7 @@ $matches = [
     ],
     [
         "squadraCasa" => "Ternana",
-        "squadraOspite" => "pisa",
+        "squadraOspite" => "Pisa",
         "puntiCasa" => 59,
         "puntiOspite" => 76
     ]
@@ -50,15 +50,14 @@ function getMatches($matches)
 //snack 2 \********************************************************
 function getAccess()
 {
-    if (!empty($_POST["name"]) && !empty($_POST["mail"]) && !empty($_POST["age"])) {
-        if (strlen($_POST["name"]) > 3 && strpos($_POST["mail"], "@") && strpos($_POST["mail"], ".") && is_numeric($_POST["age"])) {
-            echo '<section style="border:2px solid green; height: 50px; background-color:green; text-align:center">' . "Accesso riuscito" . '</section>';
-        } else {
-            echo '<section style="border:2px solid red; height: 50px; background-color:red; text-align:center">' . "Accesso negato" . '</section>';
-        }
+    if (!empty(trim($_POST["name"] ?? '')) && !empty(trim($_POST["mail"] ?? '')) && !empty(trim($_POST["age"] ?? ''))) {
+      if (strlen(trim($_POST["name"])) > 3 && strpos(trim($_POST["mail"]), "@") !== false && strpos(trim($_POST["mail"]), ".") !== false && is_numeric(trim($_POST["age"])) && trim($_POST["age"]) >= 18) {
+        echo '<section style="border:2px solid green; height: 50px; background-color:green; text-align:center">' . "Accesso riuscito" . '</section>';
+      } else {
+        echo '<section style="border:2px solid red; height: 50px; background-color:red; text-align:center">' . "Accesso negato" . '</section>';
+      }
     }
-};
-
+  }
 
 //snack 3 \********************************************************
 
